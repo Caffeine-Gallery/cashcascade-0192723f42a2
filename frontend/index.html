@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Expense Tracker</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Employee Expense Tracker</h1>
+    </header>
+    <main>
+        <section id="add-employee">
+            <h2>Add Employee</h2>
+            <form id="employee-form">
+                <input type="text" id="employee-name" placeholder="Employee Name" required>
+                <select id="employee-category" required>
+                    <option value="CSuite">CSuite</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Junior">Junior</option>
+                </select>
+                <button type="submit">Add Employee</button>
+            </form>
+        </section>
+        <section id="add-expense">
+            <h2>Add Expense</h2>
+            <form id="expense-form">
+                <select id="expense-employee" required></select>
+                <input type="number" id="expense-amount" placeholder="Amount" step="0.01" required>
+                <input type="text" id="expense-description" placeholder="Description" required>
+                <button type="submit">Add Expense</button>
+            </form>
+        </section>
+        <section id="expense-summary">
+            <h2>Expense Summary</h2>
+            <div id="total-expenses"></div>
+            <div id="category-expenses"></div>
+        </section>
+        <section id="expense-list">
+            <h2>All Expenses</h2>
+            <ul id="expenses"></ul>
+        </section>
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

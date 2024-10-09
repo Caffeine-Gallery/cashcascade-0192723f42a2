@@ -1,0 +1,30 @@
+type Expense = 
+ record {
+   amount: float64;
+   date: int;
+   description: text;
+   employeeId: nat;
+   id: nat;
+ };
+type EmployeeCategory = 
+ variant {
+   CSuite;
+   Junior;
+   Senior;
+ };
+type Employee = 
+ record {
+   category: EmployeeCategory;
+   id: nat;
+   name: text;
+ };
+service : {
+  addEmployee: (text, text) -> (nat);
+  addExpense: (nat, float64, text) -> (opt nat);
+  getAllEmployees: () -> (vec Employee) query;
+  getEmployee: (nat) -> (opt Employee) query;
+  getExpensesByCategory: (text) -> (vec Expense) query;
+  getExpensesByEmployee: (nat) -> (vec Expense) query;
+  getTotalExpenses: () -> (float64) query;
+  getTotalExpensesByCategory: (text) -> (float64) query;
+}
